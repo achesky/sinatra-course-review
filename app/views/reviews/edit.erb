@@ -1,0 +1,18 @@
+<h1>Edit <%= @review.name %></h1>
+
+<form action="/reviews/<%=@review.id %>" method="POST">
+  <label> Review Name </label>
+  <input type="text" name="name" value="<%=@review.name %>"> </br>
+
+  <label> Review Content </label>
+  <input type="text" name="content" value="<%=@review.content%>"> </br>
+
+  <label> Which Course does this belong in? </label>
+  <select name="course_id">
+    <% current_user.courses.each do |course| %>
+      <option value=<%=course.id %> <%= "selected" if course.id==@review.course.id %> ><%= course.name %></option>
+    <% end %>
+  </select>
+
+  <input type="submit" value="Update">
+</form>
