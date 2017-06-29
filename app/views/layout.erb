@@ -18,3 +18,12 @@
       <%end %>
 
     </nav>
+    <div class="container">
+      <h1>Course Reviewer</h1>
+      <% if !@error_message.nil? %>
+      <div class="alert alert-warning">
+        <%= @error_message %>
+      </div>
+    <% end %>
+      <%= yield %>
+    </div>
