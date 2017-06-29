@@ -28,4 +28,19 @@ class ReviewsController < ApplicationController
     redirect "/reviews/#{@review.id}"
   end
 
+  get "/reviews/:id" do
+    redirect_if_not_logged_in
+    @review = Review.find(params[:id])
+    erb :'reviews/show'
+  end
+
+  post "/reviews" do
+    redirect_if_not_logged_in
+    unless Review.valid_params?(params)
+      redirect "/reviews/new?error=invalid review"
+    end
+    Review.create(params)
+    redirect "/reviews"
+  end
+
 end
