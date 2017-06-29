@@ -1,0 +1,11 @@
+<h1>Edit <%= @course.name %></h1>
+
+<form action="/courses/<%=@course.id %>" method="POST">
+  <label> Professor Name </label>
+  <input type="text" name="name" value="<%=@course.professor %>"> </br>
+
+  <label> Course Capacity </label>
+  <input type="number" name="capacity" value="<%=@course.capacity %>"> </br>
+
+  <input type="submit" value="Update">
+</form>
