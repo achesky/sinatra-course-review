@@ -1,0 +1,7 @@
+<% @courses.each do |bag| %>
+  <%= course.professor %><br />
+  <%= course.capacity %> <br />
+  <a href="/courses/<%=course.id%>/edit">Edit</a>
+  <br />
+  <br />
+<% end %>
