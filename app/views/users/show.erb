@@ -1,0 +1,6 @@
+<p> Here are your Courses, <%= @user.username %>
+<% @user.reveiws.each do |bag| %>
+  <ul>
+    <li><a href="/reviews/<%=review.id%>"><%= bag.name %></a></li>
+  </ul>
+<% end %>
