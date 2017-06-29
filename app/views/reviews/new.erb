@@ -1,0 +1,18 @@
+<h1>Add a New Review</h1>
+
+<form action="/reviews" method="POST">
+  <label> Review Title </label>
+  <input type="text" name="title"> </br>
+
+  <label> Review Content </label>
+  <input type="text" name="content"> </br>
+
+  <label> Which Course does this belong in? </label>
+  <select name="course_id">
+    <% current_user.courses.each do |bag| %>
+      <option value=<%=course.id %>><%= course.name %></option>
+    <% end %>
+  </select>
+
+  <input type="submit" value="Create">
+</form>
