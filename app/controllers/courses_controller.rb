@@ -22,9 +22,6 @@ class CoursesController < ApplicationController
   post "/courses/:id" do
     redirect_if_not_logged_in
     @course = Course.find(params[:id])
-    unless Course.valid_params?(params)
-      redirect "/courses/#{@course.id}/edit?error=invalid course"
-    end
     @course.update(params.select{|k|k=="professor" || k=="capacity"})
     redirect "/courses/#{@course.id}"
   end
@@ -38,9 +35,6 @@ class CoursesController < ApplicationController
   post "/courses" do
     redirect_if_not_logged_in
 
-    unless Course.valid_params?(params)
-      redirect "/courses/new?error=invalid course"
-    end
     Course.create(params)
     redirect "/courses"
   end

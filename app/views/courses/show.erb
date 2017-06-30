@@ -4,7 +4,7 @@
 <h2>Reviews</h2>
 <ul>
 <% @course.reviews.each do |review| %>
-  <li><a href="/reviews/<%=review.id%>"><%= review.name %></a></li>
+  <li><a href="/reviews/<%=review.id%>"><%= review.title %></a></li>
 <% end%>
 </ul>
 <a href="/courses/<%=@course.id%>/edit">Edit</a>

@@ -8,11 +8,7 @@
   <input type="text" name="content"> </br>
 
   <label> Which Course does this belong in? </label>
-  <select name="course_id">
-    <% current_user.courses.each do |bag| %>
-      <option value=<%=course.id %>><%= course.name %></option>
-    <% end %>
-  </select>
+  <input type="text" name="course_id"> </br>
 
   <input type="submit" value="Create">
 </form>
