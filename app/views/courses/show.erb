@@ -3,8 +3,8 @@
 
 <h2>Reviews</h2>
 <ul>
-<% @bag.reviews.each do |club| %>
-  <li><a href="/clubs/<%=review.id%>"><%= review.name %></a></li>
+<% @course.reviews.each do |review| %>
+  <li><a href="/reviews/<%=review.id%>"><%= review.name %></a></li>
 <% end%>
 </ul>
 <a href="/courses/<%=@course.id%>/edit">Edit</a>
