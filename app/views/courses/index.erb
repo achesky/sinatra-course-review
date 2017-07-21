@@ -1,5 +1,5 @@
 <% @courses.each do |course| %>
-  <%= course.professor %><br />
+  <a href="/courses/<%=course.id%>"><%= course.professor %><br /></a>
   <%= course.capacity %> <br />
   <%  if course.user_id == session[:id] %>
     <a href="/courses/<%=course.id%>/edit">Edit</a>

@@ -32,7 +32,7 @@ class ReviewsController < ApplicationController
   get "/reviews/:id" do
     redirect_if_not_logged_in
     @review = Review.find(params[:id])
-    erb :'reviews/show'
+    erb :'/courses'
   end
 
   post "/reviews" do
@@ -41,7 +41,7 @@ class ReviewsController < ApplicationController
       redirect "/reviews/new?error=invalid review"
     end
     Review.create(params)
-    redirect "/reviews"
+    redirect "/courses"
   end
 
   delete '/reviews/:id' do

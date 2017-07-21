@@ -30,7 +30,7 @@ class CoursesController < ApplicationController
 
   get "/courses/:id" do
     redirect_if_not_logged_in
-    @course = Course.find_by(params[:user_id])
+    @course = Course.find(params[:id])
     erb :'courses/show'
   end
 
