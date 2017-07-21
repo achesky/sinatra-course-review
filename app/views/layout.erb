@@ -8,11 +8,8 @@
       <nav>
         <% if logged_in? %>
 
-          <a href="/reviews/new"> Write Review</a>
-          <a href="/logout"> Log Out </a>
-          <p>Welcome, <%=current_user.username %></p>
-
           <a href="/courses/new"> Add a Course</a>
+          <a href="/courses">View Courses</a>
           <a href="/logout"> Log Out </a>
           <p>Welcome, <%=current_user.username %></p>
 

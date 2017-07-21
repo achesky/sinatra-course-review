@@ -1,6 +1,6 @@
 <p> Here are your Courses, <%= @user.username %>
-<% @user.reviews.each do |bag| %>
+<% @user.reviews.each do |review| %>
   <ul>
-    <li><a href="/reviews/<%=review.id%>"><%= bag.name %></a></li>
+    <li><a href="/reviews/<%=review.id%>"><%= review.name %></a></li>
   </ul>
 <% end %>

@@ -1,7 +1,13 @@
 <% @courses.each do |course| %>
   <%= course.professor %><br />
   <%= course.capacity %> <br />
-  <a href="/courses/<%=course.id%>/edit">Edit</a>
+  <%  if course.user_id == session[:id] %>
+    <a href="/courses/<%=course.id%>/edit">Edit</a>
+    <form method="post" action="/courses/<%= course.id %>">
+      <input type="hidden" name="_method" value="delete">
+      <input type="submit" value="Delete Course">
+    </form>
+  <% end %>
   <br />
   <br />
 <% end %>

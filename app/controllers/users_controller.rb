@@ -26,7 +26,8 @@ class UsersController < ApplicationController
       redirect to '/signup'
     else
       @user = User.create(:username => params[:username], :password => params[:password])
-      session[:user_id] = @user.id
+      @session = session
+      @session[:id] = @user.id
       redirect '/courses'
     end
   end

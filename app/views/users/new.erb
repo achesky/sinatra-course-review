@@ -3,7 +3,16 @@
 
 <h3>Sign Up</h3>
 <form action="/signup" method="POST">
-  <p>Name: <input type="text" name="username"></p>
-  <p>Password: <input type="text" name="password"></p>
+
+  <div>
+    <label for="username">Username:</label>
+    <input type="text" name="username" placeholder="Your Username">
+  </div>
+
+  <div>
+    <label for="password">Password:</label>
+    <input type="password" name="password" placeholder="Password">
+  </div>
+
   <input class="btn btn-primary" type="submit">
 </form>

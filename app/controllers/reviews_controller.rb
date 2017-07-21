@@ -8,6 +8,7 @@ class ReviewsController < ApplicationController
   get "/reviews/new" do
     redirect_if_not_logged_in
     @error_message = params[:error]
+    @courses = Course.all
     erb :'reviews/new'
   end
 
@@ -41,6 +42,14 @@ class ReviewsController < ApplicationController
     end
     Review.create(params)
     redirect "/reviews"
+  end
+
+  delete '/reviews/:id' do
+    @review = Review.find_by_id(params[:id])
+    if @review.user_id == session[:id]
+      @review.destroy
+    end
+    redirect '/reviews'
   end
 
 end
